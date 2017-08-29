@@ -1,6 +1,47 @@
 
-header {
+header, footer {
   color: white;
-  background-color: slategrey;
+  background-color:  rgb(90,90,90);;
   padding: 1em;
+}
+
+nav {
+  padding: 10px;
+  overflow: auto;
+  background-color: rgb(90,90,90);
+}
+
+nav ul {
+  list-style-type: none;
+  font-size: 150%;
+  font-family: arial;
+}
+
+nav ul li {
+  float: left;
+  padding-right: 0.5em;
+  cursor: pointer;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  padding: 0.3em ;
+  text-decoration: none;
+}
+nav ul a:visited {
+  color: white;
+  text-decoration: none;
+}
+nav a:hover {
+  color: rgb(10,10,10);
+  left: 0.1em;
+}
+nav ul a:active {
+  color: yellow;
+  background-color: rgb(10,10,10);
+  text-decoration: none;
+}
+a.contact {
+  background-color: #4CAF50;
 }
