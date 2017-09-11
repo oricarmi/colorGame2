@@ -1,0 +1,56 @@
+.forms {
+  padding: 30px;
+  font-family: arial;
+}
+.forms input, .forms select {
+  border-width: 1px;
+  border-radius: 30px;
+  padding: 4px;
+}
+.buttons {
+  border-color: transparent;
+  border-width:1px;
+  border-radius: 30px;
+  font-size: 130%;
+  width:85px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+#reset_button {
+  background-color: red;
+  color: white;
+  padding: 3px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#reset_button:hover {
+  background-color: white;
+  border-color:red;
+  color: red;
+}
+
+#submit_button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 3px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#submit_button:hover {
+  background-color: white;
+  border-color:#4CAF50;
+  color: #4CAF50;
+}
+.errorMsg {
+  color: red;
+  padding-left: 10px;
+}
+

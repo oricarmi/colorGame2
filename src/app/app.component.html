@@ -4,4 +4,18 @@
     Welcome to {{title}}!
   </h1>
 </header>
-
+<nav>
+  <ul>
+    <li><a routerLink="/sign-up" routerLinkActive="active">Sign up</a></li>
+    <li><a routerLink="/log-in" routerLinkActive="active">Log in</a></li>
+    <li><a routerLink="/game" routerLinkActive="active">Play game!</a></li>
+    <li><a routerLink="/my_statistics" routerLinkActive="active">My statistics</a></li>
+    <li><a routerLink="/contact_us" routerLinkActive="active" class="contact">contact us</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+<footer>
+  <h3>
+    Copyright &copy; Ori
+  </h3>
+</footer>
