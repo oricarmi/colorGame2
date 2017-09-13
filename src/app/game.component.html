@@ -1,17 +1,36 @@
 <div class="container" *ngIf = "!gameEnded">
-
-  <h3 class="semi_titles">Write the color that the word is colored in</h3>
-  <button class="game_button" id="start_button" (click)="startGame()" [disabled]="disVar" style="vertical-align:middle"><span>START</span></button>
-  <h4 class="semi_titles">Time left:<span class="semi_titles">{{counter}}</span></h4>
-  <h4 class="semi_titles">Number of Tries:<span class="semi_titles">{{numTries}}</span></h4>
-  <h4 class="semi_titles">Correct:<span class="semi_titles">{{numCorrect}}</span></h4>
-  <h4 id="word" class="semi_titles" [style.color]="color">{{txt}}</h4>
-
-  <ul class="game_button">
-    <li><button class="game_button" (click)="continueGame(0)" value="red" [disabled]="!disVar">red</button></li>
-    <li><button class="game_button" (click)="continueGame(1)" value="blue" [disabled]="!disVar">blue</button></li>
-    <li><button class="game_button" (click)="continueGame(2)" value="green" [disabled]="!disVar">green</button></li>
-  </ul>
+  <div class="row">
+    <h3 class="semi_titles col-xs-12">Write the color that the word is colored in</h3>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="game_button" id="start_button" (click)="startGame()" [disabled]="disVar" style="vertical-align:middle"><span>START</span></button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-xs-6">
+      <h4 class="semi_titles">Time left:</h4>
+    </div>
+    <div class="col-md-8 col-xs-6">
+      <span class="semi_titles">{{counter}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <h4 class="semi_titles">Number of Tries:<span class="semi_titles">{{numTries}}</span></h4>
+  </div>
+  <div class="row">
+    <h4 class="semi_titles">Correct:<span class="semi_titles">{{numCorrect}}</span></h4>
+  </div>
+  <div class="row">
+    <h4 id="word" class="semi_titles col-xs-12" [style.color]="color">{{txt}}</h4>
+  </div>
+  <div class="row">
+    <ul class="game_button">
+      <li><button class="game_button" (click)="continueGame(0)" value="red" [disabled]="!disVar">red</button></li>
+      <li><button class="game_button" (click)="continueGame(1)" value="blue" [disabled]="!disVar">blue</button></li>
+      <li><button class="game_button" (click)="continueGame(2)" value="green" [disabled]="!disVar">green</button></li>
+    </ul>
+  </div>
   <br><br><br>
 </div>
 
