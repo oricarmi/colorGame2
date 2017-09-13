@@ -8,7 +8,7 @@
 }
 #start_button {
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 10px;
   background-color: rgb(40,40,40);
   border: none;
   color: #FFFFFF;
@@ -41,7 +41,9 @@
   opacity: 1;
   right: 0;
 }
-
+.row ul {
+  padding: 0;
+}
 ul.game_button {
   list-style-type: none;
   font-size: 150%;
@@ -49,12 +51,12 @@ ul.game_button {
 }
 ul.game_button li {
   float: left;
-  padding-right: 22px;
+  padding-right: 20px;
 }
 button.game_button {
   border-color: transparent;
   border-width:1px;
-  border-radius: 60px;
+  border-radius: 10px;
   font-size: 110%;
   width:95px;
   cursor: pointer;
@@ -64,4 +66,11 @@ button.game_button {
 .row {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+@media only screen and (max-width: 400px) {
+  button.game_button  {
+    font-size:80%;
+    width: 70px;
+  }
 }
