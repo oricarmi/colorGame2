@@ -61,3 +61,7 @@ button.game_button {
   color: white;
   background-color:rgb(40,40,40);
 }
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}

@@ -1,4 +1,4 @@
-<div class="container" *ngIf = "!gameEnded">
+<div class="container-fluid" *ngIf = "!gameEnded">
   <div class="row">
     <h3 class="semi_titles col-xs-12">Write the color that the word is colored in</h3>
   </div>
@@ -8,37 +8,53 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4 col-xs-6">
-      <h4 class="semi_titles">Time left:</h4>
-    </div>
-    <div class="col-md-8 col-xs-6">
-      <span class="semi_titles">{{counter}}</span>
+    <div class="col-xs-12">
+      <h4 class="semi_titles">Time left:<span class="semi_titles">{{counter}}</span></h4>
     </div>
   </div>
   <div class="row">
-    <h4 class="semi_titles">Number of Tries:<span class="semi_titles">{{numTries}}</span></h4>
+    <div class="col-xs-12">
+      <h4 class="semi_titles">Number of Tries:<span class="semi_titles">{{numTries}}</span></h4>
+    </div>
   </div>
   <div class="row">
-    <h4 class="semi_titles">Correct:<span class="semi_titles">{{numCorrect}}</span></h4>
+    <div class="col-xs-12">
+      <h4 class="semi_titles">Correct:<span class="semi_titles">{{numCorrect}}</span></h4>
+    </div>
   </div>
   <div class="row">
-    <h4 id="word" class="semi_titles col-xs-12" [style.color]="color">{{txt}}</h4>
+    <div class="col-xs-12">
+      <h4 id="word" class="semi_titles col-xs-12" [style.color]="color">{{txt}}</h4>
+    </div>
   </div>
   <div class="row">
-    <ul class="game_button">
-      <li><button class="game_button" (click)="continueGame(0)" value="red" [disabled]="!disVar">red</button></li>
-      <li><button class="game_button" (click)="continueGame(1)" value="blue" [disabled]="!disVar">blue</button></li>
-      <li><button class="game_button" (click)="continueGame(2)" value="green" [disabled]="!disVar">green</button></li>
-    </ul>
+    <div class="col-xs-12">
+      <ul class="game_button">
+        <li><button class="game_button" (click)="continueGame(0)" value="red" [disabled]="!disVar">red</button></li>
+        <li><button class="game_button" (click)="continueGame(1)" value="blue" [disabled]="!disVar">blue</button></li>
+        <li><button class="game_button" (click)="continueGame(2)" value="green" [disabled]="!disVar">green</button></li>
+      </ul>
+    </div>
   </div>
   <br><br><br>
 </div>
 
-<div class="container" *ngIf="gameEnded">
-
-  <h4 class="semi_titles"> Game is over! </h4>
-  <h4 class="semi_titles"> Number correct = {{numCorrect}}</h4>
-  <h4 class="semi_titles"> Percentage correct = {{numCorrect/numTries}}</h4>
+<div class="container-fluid" *ngIf="gameEnded">
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class="semi_titles"> Game is over! </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class="semi_titles"> Number correct = {{numCorrect}}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class="semi_titles"> Percentage correct = {{numCorrect/numTries}}</h4>
+    </div>
+  </div>
 
   <button class="game_button" id="start_button" (click)="startGame()"  style="vertical-align:middle"><span>RESTART</span></button><br><br>
 
