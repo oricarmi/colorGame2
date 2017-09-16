@@ -36,6 +36,7 @@ export class SignupComponent implements OnInit {
 
 
 
+
 //
 //   setUsername(username: string) {
 //     this.player.username = username;
