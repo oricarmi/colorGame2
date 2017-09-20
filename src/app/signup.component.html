@@ -1,31 +1,73 @@
-<form class="forms" [formGroup]="signupForm" #formDir="ngForm">
+<div class="container">
 
-  <div [hidden]="formDir.submitted">
-    <div class="form-group">
-      <input placeholder="username" id="username" class="form-control" formControlName="username" required>
-      <div *ngIf="username.invalid && (username.dirty || username.touched)">
-        <div class="errorMsg" *ngIf="username.errors.required">
-          username is required
+  <h1>Reactive Form</h1>
+
+  <form [formGroup]="signupForm" #formDir="ngForm">
+
+    <div [hidden]="formDir.submitted">
+
+      <div class="form-group">
+
+        <label for="name">Username</label>
+        <input id="name" class="form-control" formControlName="name" required >
+
+        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="name.errors.required">
+            Username is required.
+          </div>
+          <div *ngIf="name.errors.minlength">
+            Username must be at least 4 characters long.
+          </div>
         </div>
       </div>
-      <span *ngIf="username.errors.minlength">
-        Name must be at least 4 characters long.
-      </span>
-      <br><br>
-      <input type="password" placeholder="password" id="password" formControlName="password" required><br><br>
-      <span class="errorMsg" *ngIf="password.errors.required">
-        password is required
-      </span>
-      <input type="password" placeholder="validate password" name="password2"><span id="password2Error" class="errorMsg"></span><br><br>
-      <input type="email" placeholder="email" name="email"><span id="emailError" class="errorMsg"></span><br><br>
 
-      <span>mother tongue:</span>&nbsp;&nbsp;
-      <select name="mother_tongue" class="form-control" formControlName="language" required>
-        <option *ngFor="let l of languages" [value]="l">{{l}}</option>
-      </select><br><br><br>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" formControlName="password"  required >
 
-      <input type="submit" class="buttons" id="submit_button" [disabled]="signupForm.invalid">
-      <input type="reset" class="buttons" id="reset_button" >
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+          <div *ngIf="password.errors.required">Password is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password2">Verify Password</label>
+        <input type="password"  id="password2" class="form-control" formControlName="password2"  required >
+
+        <div *ngIf="passwordsMatch.invalid && (password2.dirty || password2.touched)" class="alert alert-danger">
+          <div *ngIf="password2.errors.required">Passwords do not match.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="language">Mother tongue</label>
+        <select id="language" class="form-control" formControlName="language" required >
+          <option *ngFor="let p of languages" [value]="p">{{p}}</option>
+        </select>
+
+        <div *ngIf="language.invalid && language.touched" class="alert alert-danger">
+          <div *ngIf="language.errors.required">Language is required.</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-default"
+              [disabled]="signupForm.invalid">Submit</button>
+      <button type="button" class="btn btn-default"
+              (click)="formDir.resetForm({})">Reset</button>
     </div>
+  </form>
+
+  <div class="submitted-message" *ngIf="formDir.submitted">
+    <p>You've submitted your hero, {{ heroForm.value.name }}!</p>
+    <button (click)="formDir.resetForm({})">Add new hero</button>
   </div>
-</form>
+</div>
+
+
+<!--
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
